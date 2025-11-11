@@ -1,0 +1,1 @@
+# chrome-extension-copy-selected-tabs-urls
