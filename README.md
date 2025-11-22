@@ -2,6 +2,18 @@
 
 A simple Chrome extension that allows you to copy URLs from multiple selected tabs to your clipboard.
 
+
+## Icon Generation: 
+
+`brew install imagemagick`
+
+```
+magick -background none icon_svg.svg -resize 128x128 icons/icon128.png
+magick -background none icon_svg.svg -resize 48x48  icons/icon48.png
+magick -background none icon_svg.svg -resize 32x32  icons/icon32.png
+magick -background none icon_svg.svg -resize 16x16  icons/icon16.png
+```
+
 ## Features
 
 - 📋 Copy URLs from all selected tabs with one click

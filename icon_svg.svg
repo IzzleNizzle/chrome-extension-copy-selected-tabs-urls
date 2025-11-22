@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <!-- Background (you can change this or remove it) -->
+  <rect width="128" height="128" rx="16" fill="#4C8BF5"/>
+
+  <!-- Browser tab behind (left) -->
+  <rect x="20" y="26" width="60" height="34" rx="6" fill="#ffffff" opacity="0.75"/>
+  <rect x="20" y="26" width="60" height="10" rx="6" fill="#dcdcdc"/>
+
+  <!-- Browser tab behind (right) -->
+  <rect x="48" y="14" width="60" height="34" rx="6" fill="#ffffff" opacity="0.75"/>
+  <rect x="48" y="14" width="60" height="10" rx="6" fill="#dcdcdc"/>
+
+  <!-- Clipboard body -->
+  <rect x="36" y="46" width="56" height="68" rx="8" fill="#ffffff"/>
+
+  <!-- Clipboard header / clip -->
+  <rect x="50" y="38" width="28" height="14" rx="4" fill="#ffd966"/>
+
+  <!-- Clipboard lines (represent data / URLs) -->
+  <rect x="44" y="60" width="40" height="6" rx="3" fill="#dcdcdc"/>
+  <rect x="44" y="72" width="40" height="6" rx="3" fill="#dcdcdc"/>
+  <rect x="44" y="84" width="40" height="6" rx="3" fill="#dcdcdc"/>
+  <rect x="44" y="96" width="40" height="6" rx="3" fill="#dcdcdc"/>
+</svg>
