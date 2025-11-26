@@ -82,7 +82,3 @@ chrome-extension-copy-selected-tabs-urls/
 - Chrome (version 88+)
 - Microsoft Edge (Chromium-based)
 - Other Chromium-based browsers that support Manifest V3
-
-## License
-
-MIT License - Feel free to use and modify as needed!
