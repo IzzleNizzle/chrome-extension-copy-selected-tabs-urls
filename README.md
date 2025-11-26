@@ -2,6 +2,37 @@
 
 A simple Chrome extension that allows you to copy URLs from multiple selected tabs to your clipboard.
 
+## Chrome Web Store Description
+
+**Copy Selected Tabs URLs** - Instantly copy multiple tab URLs to your clipboard with one click!
+
+Save time and boost your productivity with this simple yet powerful Chrome extension. Whether you're researching, sharing resources, or organizing your workflow, copying multiple tab URLs has never been easier.
+
+**🚀 Key Features:**
+• One-click copying of all selected tab URLs
+• Works seamlessly with Chrome's native tab selection (Ctrl+Click or Shift+Click)
+• Clean, intuitive interface showing tab count and previews
+• URLs copied as plain text, one per line - perfect for pasting into documents, emails, or notes
+• Lightweight and fast - no permissions needed beyond tab access
+
+**💡 Perfect For:**
+• Researchers collecting sources and references
+• Students gathering study materials
+• Developers sharing multiple documentation links
+• Content creators organizing resources
+• Anyone who frequently shares multiple links
+
+**📋 How It Works:**
+1. Select multiple tabs using Ctrl+Click (Windows/Linux) or Cmd+Click (Mac)
+2. Click the extension icon in your toolbar
+3. Hit "Copy URLs to Clipboard" button
+4. Paste your URLs anywhere you need them!
+
+**🔒 Privacy Focused:**
+This extension only accesses tab information when you explicitly use it. No data is stored or transmitted - everything stays local to your browser.
+
+Transform your browsing workflow and stop manually copying URLs one by one. Install Copy Selected Tabs URLs today and experience the convenience of bulk URL copying!
+
 
 ## Icon Generation: 
 
