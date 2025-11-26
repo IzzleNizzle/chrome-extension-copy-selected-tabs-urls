@@ -2,6 +2,12 @@
 
 A simple Chrome extension that allows you to copy URLs from multiple selected tabs to your clipboard.
 
+## Single Purpose Statement
+
+This extension has a single, narrow purpose: **Copy URLs from selected Chrome tabs to the clipboard**. 
+
+The extension does exactly one thing - it allows users to select multiple tabs in their browser and copy all their URLs to the clipboard with a single click. It does not perform any other functions, does not modify web pages, does not track user behavior, and does not interact with external services. This focused functionality makes it easy to understand and ensures users know exactly what the extension does when they install it.
+
 ## Chrome Web Store Description
 
 **Copy Selected Tabs URLs** - Instantly copy multiple tab URLs to your clipboard with one click!
