@@ -1,0 +1,119 @@
+body {
+  width: 450px;
+  min-height: 200px;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: #f5f5f5;
+}
+
+.container {
+  padding: 16px;
+}
+
+h1 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  color: #333;
+}
+
+.status {
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  display: none;
+}
+
+.status.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  display: block;
+}
+
+.status.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  display: block;
+}
+
+.tabs-info {
+  margin-bottom: 12px;
+  padding: 10px;
+  background: white;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #666;
+  border: 1px solid #ddd;
+}
+
+.copy-button {
+  width: 100%;
+  padding: 12px;
+  background: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 12px;
+}
+
+.copy-button:hover {
+  background: #1557b0;
+}
+
+.copy-button:active {
+  background: #0d47a1;
+}
+
+.copy-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.urls-container {
+  max-height: 300px;
+  overflow-y: auto;
+  background: white;
+  border-radius: 6px;
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+.url-item {
+  margin-bottom: 8px;
+  padding: 8px;
+  background: #f9f9f9;
+  border-radius: 4px;
+  font-size: 12px;
+  word-break: break-all;
+  color: #333;
+  border-left: 3px solid #1a73e8;
+}
+
+.url-item:last-child {
+  margin-bottom: 0;
+}
+
+.url-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #1a73e8;
+}
+
+.url-link {
+  color: #666;
+}
+
+.empty-state {
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+  padding: 20px;
+}
