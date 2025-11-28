@@ -8,6 +8,27 @@ This extension has a single, narrow purpose: **Copy URLs from selected Chrome ta
 
 The extension does exactly one thing - it allows users to select multiple tabs in their browser and copy all their URLs to the clipboard with a single click. It does not perform any other functions, does not modify web pages, does not track user behavior, and does not interact with external services. This focused functionality makes it easy to understand and ensures users know exactly what the extension does when they install it.
 
+## Chrome Web Store Privacy Information
+
+### Permission Justification
+
+**tabs permission**: This permission is essential and directly required for the extension's single purpose. The extension needs to query Chrome's tabs API to:
+- Access the list of currently selected/highlighted tabs in the active window
+- Read the URL and title properties of these selected tabs
+- Determine which tabs the user has chosen to copy URLs from
+
+Without the "tabs" permission, the extension cannot fulfill its core function of copying URLs from selected tabs. This permission is used only when the user explicitly clicks the extension icon and requests to copy tab URLs. No tab data is stored, transmitted, or used for any other purpose.
+
+### Remote Code Usage
+
+**Answer: No, I am not using Remote code**
+
+This extension contains only local JavaScript code packaged within the extension. All functionality is implemented using:
+- Local JavaScript files (popup.js)
+- Chrome's built-in APIs (tabs API, clipboard API)
+- No external scripts, modules, or eval() statements
+- No references to external JavaScript files or services
+
 ## Chrome Web Store Description
 
 **Copy Selected Tabs URLs** - Instantly copy multiple tab URLs to your clipboard with one click!
