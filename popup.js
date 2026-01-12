@@ -87,12 +87,17 @@ function parseUrls(text) {
   const lines = text.split('\n').map(line => line.trim()).filter(line => line);
   const urls = [];
   
-  // URL validation regex - basic but functional
-  const urlPattern = /^(https?:\/\/|chrome:\/\/|file:\/\/|about:)/i;
-  
   for (const line of lines) {
-    if (urlPattern.test(line)) {
-      urls.push(line);
+    // Validate URL using URL constructor
+    try {
+      const url = new URL(line);
+      // Only allow http, https, chrome, file, and about protocols
+      if (['http:', 'https:', 'chrome:', 'file:', 'about:'].includes(url.protocol)) {
+        urls.push(line);
+      }
+    } catch (e) {
+      // Invalid URL, skip it
+      continue;
     }
   }
   
@@ -107,9 +112,8 @@ async function openUrlsInTabs(urls) {
   }
   
   try {
-    for (const url of urls) {
-      await chrome.tabs.create({ url: url, active: false });
-    }
+    // Create all tabs concurrently for better performance
+    await Promise.all(urls.map(url => chrome.tabs.create({ url: url, active: false })));
     showStatus(`✓ Opened ${urls.length} URL${urls.length > 1 ? 's' : ''} in new tabs!`, 'success');
   } catch (error) {
     console.error('Error opening tabs:', error);
@@ -128,9 +132,11 @@ async function openUrlsInWindow(urls) {
     // Create a new window with the first URL
     const newWindow = await chrome.windows.create({ url: urls[0] });
     
-    // Open remaining URLs in the new window
-    for (let i = 1; i < urls.length; i++) {
-      await chrome.tabs.create({ windowId: newWindow.id, url: urls[i], active: false });
+    // Open remaining URLs in the new window concurrently for better performance
+    if (urls.length > 1) {
+      await Promise.all(urls.slice(1).map(url => 
+        chrome.tabs.create({ windowId: newWindow.id, url: url, active: false })
+      ));
     }
     
     showStatus(`✓ Opened ${urls.length} URL${urls.length > 1 ? 's' : ''} in a new window!`, 'success');
