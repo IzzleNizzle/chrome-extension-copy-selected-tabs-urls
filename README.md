@@ -79,6 +79,8 @@ magick -background none icon_svg.svg -resize 16x16  icons/icon16.png
 - 📊 Shows the number of selected tabs
 - ✨ Clean and intuitive user interface
 - 📝 Displays both tab titles and URLs
+- 🔗 Paste URLs and open them in new tabs or a new window
+- 🛡️ Smart URL validation to prevent opening invalid or dangerous URLs
 
 ## Installation
 
@@ -93,6 +95,8 @@ magick -background none icon_svg.svg -resize 16x16  icons/icon16.png
 
 ## Usage
 
+### Copying URLs from Selected Tabs
+
 1. **Select multiple tabs** in Chrome using one of these methods:
    - Hold `Shift` and click another tab to select all tabs in between
    - Hold `Ctrl` (Windows/Linux) or `Cmd` (Mac) and click individual tabs to select specific tabs
@@ -106,6 +110,21 @@ magick -background none icon_svg.svg -resize 16x16  icons/icon16.png
 4. **Click "Copy URLs to Clipboard"** button
 
 5. The URLs are now copied to your clipboard (one URL per line) and ready to paste anywhere!
+
+### Pasting URLs to Open Them
+
+1. **Click the extension icon** in your Chrome toolbar
+
+2. **Paste URLs** into the text area in the "Paste & Open URLs" section
+   - Paste URLs you previously copied
+   - One URL per line
+   - Supports http://, https://, chrome://, file://, and about: protocols
+   
+3. Choose how to open them:
+   - **Click "Open in New Tabs"** to open all URLs in new background tabs in your current window
+   - **Click "Open in New Window"** to open all URLs in a new window
+
+4. The URLs will be validated and opened. Invalid URLs are automatically filtered out.
 
 ## Permissions
 
@@ -133,7 +152,9 @@ chrome-extension-copy-selected-tabs-urls/
 - Built with vanilla JavaScript (no frameworks required)
 - Uses Chrome Extension Manifest V3
 - Utilizes the Clipboard API for copying text
-- Uses Chrome Tabs API to query selected tabs
+- Uses Chrome Tabs API to query selected tabs and create new tabs/windows
+- Validates URLs using the built-in URL constructor for security
+- Concurrent tab creation for optimal performance
 
 ## Browser Compatibility
 
