@@ -77,6 +77,75 @@ function showStatus(message, type) {
   }
 }
 
+// Parse URLs from text input
+function parseUrls(text) {
+  if (!text || !text.trim()) {
+    return [];
+  }
+  
+  // Split by newlines and filter valid URLs
+  const lines = text.split('\n').map(line => line.trim()).filter(line => line);
+  const urls = [];
+  
+  for (const line of lines) {
+    // Validate URL using URL constructor
+    try {
+      const url = new URL(line);
+      // Only allow http, https, chrome, file, and about protocols
+      if (['http:', 'https:', 'chrome:', 'file:', 'about:'].includes(url.protocol)) {
+        urls.push(line);
+      }
+    } catch (e) {
+      // Invalid URL, skip it
+      continue;
+    }
+  }
+  
+  return urls;
+}
+
+// Open URLs in new tabs
+async function openUrlsInTabs(urls) {
+  if (urls.length === 0) {
+    showStatus('No valid URLs to open', 'error');
+    return;
+  }
+  
+  try {
+    // Create all tabs concurrently for better performance
+    await Promise.all(urls.map(url => chrome.tabs.create({ url: url, active: false })));
+    showStatus(`✓ Opened ${urls.length} URL${urls.length > 1 ? 's' : ''} in new tabs!`, 'success');
+  } catch (error) {
+    console.error('Error opening tabs:', error);
+    showStatus('Failed to open tabs', 'error');
+  }
+}
+
+// Open URLs in new window
+async function openUrlsInWindow(urls) {
+  if (urls.length === 0) {
+    showStatus('No valid URLs to open', 'error');
+    return;
+  }
+  
+  try {
+    // Create a new window with the first URL
+    const newWindow = await chrome.windows.create({ url: urls[0] });
+    
+    // Open remaining URLs in the new window concurrently for better performance
+    if (urls.length > 1) {
+      await Promise.all(urls.slice(1).map(url => 
+        chrome.tabs.create({ windowId: newWindow.id, url: url, active: false })
+      ));
+    }
+    
+    showStatus(`✓ Opened ${urls.length} URL${urls.length > 1 ? 's' : ''} in a new window!`, 'success');
+  } catch (error) {
+    console.error('Error opening window:', error);
+    showStatus('Failed to open window', 'error');
+  }
+}
+
 // Initialize the popup
 document.addEventListener('DOMContentLoaded', async () => {
   try {
@@ -91,6 +160,21 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (tabs.length === 0) {
       copyButton.disabled = true;
     }
+    
+    // Set up paste and open functionality
+    const urlsInput = document.getElementById('urlsInput');
+    const openTabsButton = document.getElementById('openTabsButton');
+    const openWindowButton = document.getElementById('openWindowButton');
+    
+    openTabsButton.addEventListener('click', () => {
+      const urls = parseUrls(urlsInput.value);
+      openUrlsInTabs(urls);
+    });
+    
+    openWindowButton.addEventListener('click', () => {
+      const urls = parseUrls(urlsInput.value);
+      openUrlsInWindow(urls);
+    });
   } catch (error) {
     showStatus('Error loading tabs', 'error');
     console.error(error);
