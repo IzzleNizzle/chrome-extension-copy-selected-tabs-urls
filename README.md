@@ -1,5 +1,8 @@
 # Chrome Extension: Copy Selected Tabs URLs
 
+[Chrome Web Store:](https://chromewebstore.google.com/detail/copy-selected-tabs-urls/eoibojgifhgghnidcpapddnfbpgbdnkd)
+
+
 A simple Chrome extension that allows you to copy URLs from multiple selected tabs to your clipboard.
 
 ## Single Purpose Statement
