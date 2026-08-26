@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duplicate Tab Shortcut</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <img class="logo" src="icons/icon48.png" alt="">
+      <div>
+        <h1>Duplicate Tab Shortcut</h1>
+        <p id="selection-summary" class="subtitle">Checking your tab selection…</p>
+      </div>
+    </header>
+
+    <div id="status" class="status"></div>
+
+    <button id="duplicateButton" class="primary-button">Duplicate selected tabs</button>
+    <button id="duplicateWindowButton" class="secondary-button">Duplicate into a new window</button>
+
+    <section class="card">
+      <h2>Your shortcuts</h2>
+      <ul id="shortcut-list" class="shortcut-list"></ul>
+      <button id="shortcutsLink" class="link-button">Change shortcuts in Chrome</button>
+    </section>
+
+    <section class="card">
+      <h2>Settings</h2>
+
+      <fieldset class="field">
+        <legend>Where duplicates go</legend>
+        <label class="choice">
+          <input type="radio" name="placement" value="after-source">
+          <span>Right after the original tab</span>
+        </label>
+        <label class="choice">
+          <input type="radio" name="placement" value="end-of-strip">
+          <span>At the end of the tab strip</span>
+        </label>
+      </fieldset>
+
+      <label class="choice">
+        <input type="checkbox" id="focusDuplicates">
+        <span>Switch to the duplicates after creating them</span>
+      </label>
+
+      <label class="choice">
+        <input type="checkbox" id="keepPinnedState">
+        <span>Keep duplicates of pinned tabs pinned</span>
+      </label>
+
+      <label class="choice">
+        <input type="checkbox" id="showBadgeCount">
+        <span>Flash the number of new tabs on the toolbar icon</span>
+      </label>
+
+      <label class="choice choice-inline">
+        <span>Never duplicate more than</span>
+        <input type="number" id="maxTabsPerRun" min="1" max="100" step="1">
+        <span>tabs at once</span>
+      </label>
+    </section>
+
+    <p class="footnote">
+      Select several tabs first with <strong>Shift</strong>+click or
+      <strong>Ctrl</strong>/<strong>Cmd</strong>+click to duplicate them all in one go.
+    </p>
+  </div>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
