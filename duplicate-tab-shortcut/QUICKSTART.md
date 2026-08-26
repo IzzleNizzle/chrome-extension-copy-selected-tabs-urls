@@ -17,7 +17,7 @@ The icon appears in the toolbar. Pin it if you want the popup one click away.
 | --- | --- |
 | Press `Alt+Shift+D` | A copy of the current tab opens right next to it |
 | `Ctrl`/`Cmd`+click two more tabs, press `Alt+Shift+D` | All three tabs are duplicated, in order |
-| Press `Alt+Shift+N` | The selection is duplicated into a new window |
+| Press `Alt+Shift+M` | The selection is duplicated into a new window |
 | Click the toolbar icon | Popup with the selection count, both shortcuts and all settings |
 
 ## 3. If the shortcut does nothing

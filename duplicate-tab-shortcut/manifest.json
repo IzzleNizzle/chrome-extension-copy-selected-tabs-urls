@@ -20,8 +20,8 @@
     },
     "duplicate-selected-tabs-new-window": {
       "suggested_key": {
-        "default": "Alt+Shift+N",
-        "mac": "Alt+Shift+N"
+        "default": "Alt+Shift+M",
+        "mac": "Alt+Shift+M"
       },
       "description": "Duplicate the selected tab(s) into a new window"
     }

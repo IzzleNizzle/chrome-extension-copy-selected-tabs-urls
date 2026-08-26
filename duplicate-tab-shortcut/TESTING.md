@@ -29,8 +29,8 @@ Load the unpacked extension first (see [QUICKSTART.md](QUICKSTART.md)) and run t
 
 ### New window
 
-- [ ] `Alt+Shift+N` with one tab selected opens a new window containing one copy
-- [ ] `Alt+Shift+N` with three tabs selected opens one new window containing all three copies, in order
+- [ ] `Alt+Shift+M` with one tab selected opens a new window containing one copy
+- [ ] `Alt+Shift+M` with three tabs selected opens one new window containing all three copies, in order
 - [ ] The original window keeps its tabs untouched
 
 ### Placement setting
@@ -43,7 +43,7 @@ Load the unpacked extension first (see [QUICKSTART.md](QUICKSTART.md)) and run t
 
 - [ ] With **Switch to the duplicates** on, focus lands on the copy of the tab that was active
 - [ ] With it off, the tab you were on stays active and the original selection stays highlighted
-- [ ] With it off, `Alt+Shift+N` opens the new window in the background
+- [ ] With it off, `Alt+Shift+M` opens the new window in the background
 
 ### Pinned tabs
 

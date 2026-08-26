@@ -14,7 +14,7 @@ It duplicates tabs and nothing else. It does not read page content, does not rea
 
 - ⌨️ `Alt+Shift+D` duplicates the active tab
 - 🗂️ Duplicates **every selected tab** at once when several tabs are highlighted with `Shift`+click or `Ctrl`/`Cmd`+click
-- 🪟 `Alt+Shift+N` duplicates the selection straight into a **new window**
+- 🪟 `Alt+Shift+M` duplicates the selection straight into a **new window**
 - 🎛️ Fully re-mappable from `chrome://extensions/shortcuts`
 - 📍 Choose where duplicates land: right after each original tab (Chrome's own behaviour) or grouped at the end of the tab strip
 - 👁️ Choose whether Chrome jumps to the duplicates or keeps you on the tabs you were already using
@@ -27,9 +27,11 @@ It duplicates tabs and nothing else. It does not read page content, does not rea
 | Action | Windows / Linux | macOS |
 | --- | --- | --- |
 | Duplicate the selected tab(s) | `Alt+Shift+D` | `Option+Shift+D` |
-| Duplicate the selected tab(s) into a new window | `Alt+Shift+N` | `Option+Shift+N` |
+| Duplicate the selected tab(s) into a new window | `Alt+Shift+M` | `Option+Shift+M` |
 
-Chrome silently drops a suggested shortcut if another extension already claimed it. Open `chrome://extensions/shortcuts` to check and re-assign; the extension popup shows the keys that are actually bound and flags any that are unset.
+These two combinations were picked because Chrome accepts them: it silently refuses to bind a number of `Alt+Shift` combinations that it reserves for itself (`Alt+Shift+N`, `Alt+Shift+W` and `Alt+Shift+X` among them), and it also drops a suggested shortcut if another extension already claimed it. Open `chrome://extensions/shortcuts` to check and re-assign; the extension popup shows the keys that are actually bound and flags any that are unset.
+
+![The popup after duplicating three selected tabs with one keystroke](assets/extension-screenshot-01-1280x800.png)
 
 ## Installation
 
@@ -63,7 +65,7 @@ Every selected tab is duplicated, in tab-strip order, and the copies are selecte
 
 ### Into a new window
 
-Press `Alt+Shift+N` to send the copies to a brand-new window while leaving your originals where they are. Handy for putting a working copy of a set of tabs on a second monitor.
+Press `Alt+Shift+M` to send the copies to a brand-new window while leaving your originals where they are. Handy for putting a working copy of a set of tabs on a second monitor.
 
 ### From the toolbar
 
@@ -112,7 +114,7 @@ Chrome makes you right-click a tab and pick "Duplicate" every single time. This 
 **🚀 Key Features:**
 • `Alt+Shift+D` duplicates the current tab instantly
 • Select several tabs with Shift+click or Ctrl/Cmd+click and duplicate them all in one keystroke
-• `Alt+Shift+N` duplicates your selection into a new window
+• `Alt+Shift+M` duplicates your selection into a new window
 • Re-map both shortcuts to whatever you like
 • Choose where copies land: beside the original or at the end of the tab strip
 • Choose whether Chrome jumps to the copies or leaves you where you were
@@ -168,7 +170,8 @@ duplicate-tab-shortcut/
 │   └── duplicate-plan.js       # Pure rules: what to duplicate and where copies go
 ├── icons/                      # Extension icons (16/32/48/128)
 ├── assets/
-│   └── icon_svg.svg            # Icon source artwork
+│   ├── icon_svg.svg            # Icon source artwork
+│   └── extension-screenshot-01-1280x800.png  # Store listing screenshot
 ├── scripts/
 │   ├── package-extension.sh    # Builds the Chrome Web Store zip
 │   └── generate-icons.sh       # Re-renders the PNG icons from the SVG
