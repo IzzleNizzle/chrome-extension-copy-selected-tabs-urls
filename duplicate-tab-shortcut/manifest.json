@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "Duplicate Tab Shortcut",
+  "version": "1.0.0",
+  "description": "Duplicate the current tab, or every selected tab, with a keyboard shortcut instead of right-clicking the tab strip.",
+  "permissions": [
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "commands": {
+    "duplicate-selected-tabs": {
+      "suggested_key": {
+        "default": "Alt+Shift+D",
+        "mac": "Alt+Shift+D"
+      },
+      "description": "Duplicate the selected tab(s)"
+    },
+    "duplicate-selected-tabs-new-window": {
+      "suggested_key": {
+        "default": "Alt+Shift+M",
+        "mac": "Alt+Shift+M"
+      },
+      "description": "Duplicate the selected tab(s) into a new window"
+    }
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Duplicate Tab Shortcut",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

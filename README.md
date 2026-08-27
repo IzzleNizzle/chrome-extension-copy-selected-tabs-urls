@@ -5,6 +5,17 @@
 
 A simple Chrome extension that allows you to copy URLs from multiple selected tabs to your clipboard.
 
+## Extensions in this repository
+
+| Extension | Location | Status |
+| --- | --- | --- |
+| **Copy Selected Tabs URLs** — copy the URLs of the selected tabs to the clipboard | repository root | [published](https://chromewebstore.google.com/detail/copy-selected-tabs-urls/eoibojgifhgghnidcpapddnfbpgbdnkd) |
+| **Duplicate Tab Shortcut** — duplicate the selected tab(s) with a keyboard shortcut | [`duplicate-tab-shortcut/`](duplicate-tab-shortcut/README.md) | not published yet |
+
+Each extension is packaged and loaded separately. `npm run package` at the root builds
+Copy Selected Tabs URLs; `npm run package:duplicate-tabs` builds Duplicate Tab Shortcut.
+The rest of this file documents Copy Selected Tabs URLs.
+
 ## Single Purpose Statement
 
 This extension has a single, narrow purpose: **Copy URLs from selected Chrome tabs to the clipboard**. 

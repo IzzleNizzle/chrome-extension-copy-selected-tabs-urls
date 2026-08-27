@@ -5,6 +5,9 @@
   "description": "Chrome extension for copying selected tab URLs.",
   "scripts": {
     "package": "./scripts/package-extension.sh",
-    "zip": "npm run package"
+    "zip": "npm run package",
+    "package:duplicate-tabs": "./duplicate-tab-shortcut/scripts/package-extension.sh",
+    "icons:duplicate-tabs": "./duplicate-tab-shortcut/scripts/generate-icons.sh",
+    "test:duplicate-tabs": "npm --prefix duplicate-tab-shortcut test"
   }
 }
